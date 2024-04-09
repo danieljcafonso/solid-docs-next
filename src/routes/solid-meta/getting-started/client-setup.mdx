@@ -1,0 +1,21 @@
+---
+title: Client setup
+order: 2
+---
+
+There is nothing special required on the client, just render one of head tag components whenever you want to inject a tag in the `<head />`.
+
+```js
+import { MetaProvider, Title, Link, Meta } from '@solidjs/meta';
+
+const App = () => (
+  <MetaProvider>
+    <div class="Home">
+      <Title>Title of page</Title>
+      <Link rel="canonical" href="http://solidjs.com/" />
+      <Meta name="example" content="whatever" />
+      // ...
+    </div>
+  </MetaProvider>
+);
+```

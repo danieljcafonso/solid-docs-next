@@ -1,0 +1,31 @@
+---
+title: Server setup
+order: 3
+---
+
+Wrap your app with `<MetaProvider />` on the server, using a `tags[]` array to pass down as part of your server-rendered payload. When rendered, the component mutates this array to contain the tags.
+
+```js
+import { renderToString, getAssets } from "solid-js/web";
+import { MetaProvider } from "@solidjs/meta";
+import App from "./App";
+
+// ... within the context of a request ...
+const app = renderToString(() => (
+	<MetaProvider>
+		<App />
+	</MetaProvider>
+));
+
+res.send(`
+  <!doctype html>
+  <html>
+    <head>
+      ${getAssets()}
+    </head>
+    <body>
+      <div id="root">${app}</div>
+    </body>
+  </html>
+`);
+```

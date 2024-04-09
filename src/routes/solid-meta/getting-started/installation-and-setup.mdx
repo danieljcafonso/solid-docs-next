@@ -1,0 +1,41 @@
+---
+title: Install and configure
+order: 1
+---
+
+<Callout title="Prerequisites">
+	For Solid 1.0 use 0.27.x or greater.
+    For versions of Solid 0.x use 0.26.x.
+</Callout>
+
+## Installing
+
+To get started with Solid Meta, install it using your preferred package manager.
+
+<TabsCodeBlocks>
+<div id="npm">
+```bash frame="none"
+npm i @solidjs/meta
+```
+</div>
+
+<div id="yarn">
+```bash frame="none"
+yarn add @solidjs/meta
+```
+</div>
+
+<div id="pnpm">
+```bash frame="none"
+pnpm add @solidjs/meta
+```
+</div>
+</TabsCodeBlocks>
+
+## How it works
+
+1.  You wrap your App with `<MetaProvider />`
+2.  To insert head tags within your app, just render one of `<Title />`, `<Meta />`, `<Style />`, `<Link />`, and `<Base />` components as often as needed.
+3.  One the server if you render the `<head>` element using SolidJS in JSX you are all good. Otherwise use `getAssets` from `solid-js/web` to insert the assets where you want.
+
+On the server, the tags are collected, and then on the client the server-generated tags are removed in favor of the client-rendered tags so that SPAs still work as expected (e.g. in cases where subsequent page loads need to change the head tags).

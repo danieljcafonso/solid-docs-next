@@ -29,6 +29,7 @@ export default {
 	"main.nav.section.solid.router.data.apis": "Data APIs",
 	"main.nav.section.solid.router.load.functions": "Load Functions",
 	"main.nav.section.solid.router.primitives": "Primitives",
+	"main.nav.section.solid.meta": "Solid-Meta",
 	"main.nav.no.routes": "No routes found",
 
 	// ToC
